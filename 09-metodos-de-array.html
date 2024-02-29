@@ -137,8 +137,8 @@
 
 
     const titulosFront = cursos
-        .filter(curso = curso.categoria == 'Front-End')
-        .map(curso => curso.titulo);
+        .filter(curso => curso.categoria == 'Front-End')
+        .map(curso => curso.titulo)
 
 
 
@@ -166,13 +166,11 @@
 
 
     
-
-
-    //8ª Digitação (aqui) 
-
-
-
-
+    const somaCursosMobile = cursos 
+      .filter(curso => curso.categoria == 'Mobile')
+      .reduce((i, curso) => {
+        return i + curso.preco
+      }, 0)//Valor inicial para o reduce
 
     exibirNaTela(somaCursosMobile);
 
